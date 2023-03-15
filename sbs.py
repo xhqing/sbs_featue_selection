@@ -17,7 +17,7 @@ def target_func(remaining_feas: list, current_fea: str):
     ss.fit(train_x[remaining_feas])
     lr.fit(ss.transform(train_x[remaining_feas]), train_y)
     
-    score = mean_absolute_error(test_y, lr.predict(test_x[remaining_feas]))
+    score = mean_absolute_error(test_y, lr.predict(ss.transform(test_x[remaining_feas])))
     return score
 
 def fea_selection(remaining_feas: list, dropped_feas: list, score_target: float=1000.0):
