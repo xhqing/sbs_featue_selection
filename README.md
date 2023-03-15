@@ -1,1 +1,1 @@
-# sbs_featue_selection
+# sbs_feature_selection
